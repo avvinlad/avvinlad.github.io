@@ -28,11 +28,13 @@ export default function Experience() {
                                             width={50}
                                             className="rounded-full"
                                         />
-                                        <div className="ml-4 text-xl flex justify-between w-full mr-4">
-                                            <span>
+                                        <div className="ml-4 w-full mr-4 text-base sm:text-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                                            <span className="block font-medium">
                                                 {job.name} - {job.jobTitle}
                                             </span>
-                                            <span>{job.date}</span>
+                                            <span className="sm:ml-4 sm:flex-shrink-0 sm:text-right text-sm">
+                                                {job.date}
+                                            </span>
                                         </div>
                                     </div>
                                 </AccordionTrigger>
