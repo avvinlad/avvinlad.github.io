@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import * as motion from "motion/react-client";
+import { HERO_GREETING, HERO_TAGLINE, HERO_DESCRIPTION, HERO_CONNECT_BUTTON } from "@/constants/localization";
 
 export default function HomePage() {
     return (
@@ -14,7 +15,7 @@ export default function HomePage() {
             <div className="waving-hand mb-4 text-7xl lg:text-8xl">👋🏽</div>
             <div>
                 <TypeAnimation
-                    sequence={["hi! i'm avin.", 2000]}
+                    sequence={[HERO_GREETING, 2000]}
                     wrapper="span"
                     speed={1}
                     className="font-bold text-center tracking-wide text-5xl lg:text-6xl"
@@ -23,12 +24,9 @@ export default function HomePage() {
             </div>
             {/* TAGLINE */}
             <div className="flex flex-col">
-                <span className="leading-relaxed text-2xl lg:text-4xl">I like to create things.</span>
+                <span className="leading-relaxed text-2xl lg:text-4xl">{HERO_TAGLINE}</span>
                 <br />
-                <span className="leading-relaxed px-8 text-lg lg:text-xl">
-                    I'm a software engineer based in Toronto. Aimed at positively impacting large scale products and
-                    services.
-                </span>
+                <span className="leading-relaxed px-8 text-lg lg:text-xl">{HERO_DESCRIPTION}</span>
             </div>
             {/* CONNECT WITH ME */}
             <div className="my-8">
@@ -36,7 +34,7 @@ export default function HomePage() {
                     <motion.div whileHover={{ scale: 1.15 }}>
                         <Button className="text-center p-8 text-base lg:text-lg">
                             <Send className="mr-2 h-8 w-8" />
-                            Let's Connect!
+                            {HERO_CONNECT_BUTTON}
                         </Button>
                     </motion.div>
                 </a>

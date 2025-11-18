@@ -4,11 +4,11 @@ import { Separator } from "@/components/ui/separator";
 
 import { ThemeProvider } from "@/components/theme-provider";
 
-import Header from "@/widgets/Header";
-import Hero from "@/widgets/Hero";
-import About from "@/widgets/About";
-import Experience from "@/widgets/Experience";
-import Projects from "@/widgets/Projects";
+import Header from "@/sections/Header";
+import Hero from "@/sections/Hero";
+import About from "@/sections/About";
+import Experience from "@/sections/Experience";
+import Projects from "@/sections/Projects";
 
 export const fontSans = FontSans({
     subsets: ["latin-ext"],

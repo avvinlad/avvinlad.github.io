@@ -4,15 +4,17 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Music, CandlestickChart, Pi, Github } from "lucide-react";
 import * as motion from "motion/react-client";
+import { PROJECTS_TITLE, PROJECTS_SUBTITLE, GITHUB, PROJECTS } from "@/constants/localization";
 
 const ICON_SIZE = 20;
+const ICONS = [<Music size={ICON_SIZE} />, <CandlestickChart size={ICON_SIZE} />, <Pi size={ICON_SIZE} />];
 
 export default function Projects() {
     return (
         <div id="projects" className="flex flex-col px-8 justify-center mx-auto">
             <div>
-                <h2 className="text-3xl mb-1 font-extrabold">Projects</h2>
-                <h3 className="text-lg">On My Spare Time.</h3>
+                <h2 className="text-3xl mb-1 font-extrabold">{PROJECTS_TITLE}</h2>
+                <h3 className="text-lg">{PROJECTS_SUBTITLE}</h3>
             </div>
             {/* DESKTOP */}
             <div className="hidden lg:flex justify-center mx-auto my-6 w-2/3 xl:w-full">
@@ -21,8 +23,8 @@ export default function Projects() {
                         <CarouselContent>
                             {PROJECTS.map((project) => (
                                 <CarouselItem key={project.name}>
-                                    <div className="p-2">
-                                        <Card>
+                                    <div className="p-2 h-full">
+                                        <Card className="">
                                             <CardContent className="flex items-center justify-center">
                                                 <div className="w-full p-8">
                                                     <div className="flex flex-row justify-between text-center mb-4">
@@ -38,12 +40,21 @@ export default function Projects() {
                                                                     target="_blank"
                                                                     className="ml-2 underline"
                                                                 >
-                                                                    Github
+                                                                    {GITHUB}
                                                                 </a>
                                                             </button>
                                                         </motion.div>
                                                     </div>
-                                                    <div>{project.description}</div>
+                                                    <div>
+                                                        <div className="">
+                                                            <p className="text-lg">{project.description}</p>
+                                                            <ul className="grid gap-y-2 my-3 list-disc mx-8 lg:mx-12">
+                                                                {project.points.map((point: string) => (
+                                                                    <li>{point}</li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </CardContent>
                                         </Card>
@@ -64,21 +75,28 @@ export default function Projects() {
                             <AccordionItem key={index} value={`item-${index + 1}`}>
                                 <AccordionTrigger>
                                     <div className="flex items-center gap-x-4">
-                                        <span className="p-2 border-2 rounded-xl">{project.icon}</span>
+                                        <span className="p-2 border-2 rounded-xl">{ICONS[project.id]}</span>
                                         <span className="text-center text-xl font-bold">{project.name}</span>
                                     </div>
                                 </AccordionTrigger>
                                 <AccordionContent>
                                     <div className="flex flex-col justify-between w-full">
                                         {/* Text content */}
-                                        <div className="">{project.description}</div>
+                                        <div className="">
+                                            <p className="text-lg">{project.description}</p>
+                                            <ul className="grid gap-y-2 my-3 list-disc mx-8 lg:mx-12">
+                                                {project.points.map((point: string) => (
+                                                    <li>{point}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
 
                                         {/* Button */}
                                         <div className="flex flex-row justify-end p-4 mr-4">
                                             <button className="flex border rounded-2xl px-4 py-2 justify-center items-center text-center">
                                                 <Github size={ICON_SIZE} />
                                                 <a href={project.link} target="_blank" className="ml-2 underline">
-                                                    Github
+                                                    {GITHUB}
                                                 </a>
                                             </button>
                                         </div>
@@ -92,61 +110,3 @@ export default function Projects() {
         </div>
     );
 }
-
-const PROJECTS = [
-    {
-        name: "Spotify Analyzer",
-        icon: <Music size={ICON_SIZE} />,
-        link: "https://github.com/avvinlad/spotify_analyzer",
-        description: (
-            <div className="">
-                <p className="text-lg">An application for in-depth analysis into your Spotify playlists.</p>
-                <ul className="grid gap-y-2 my-3 list-disc mx-8 lg:mx-12">
-                    <li>Uses OAuth 2.0 and Spotify API to retrieve account and music information.</li>
-                    <li>
-                        Extracts information such as song popularity, audio features (tempo, energy, danceability), and
-                        artist information.
-                    </li>
-                    <li>Ability to extract the data into a CSV for further data manipulation.</li>
-                </ul>
-            </div>
-        )
-    },
-    {
-        name: "Edgar Search",
-        icon: <CandlestickChart size={ICON_SIZE} />,
-        link: "https://github.com/avvinlad/edgar_search",
-        description: (
-            <div className="">
-                <p className="text-lg font-semibold">Tracking insider stock trades at your favourite companies.</p>
-                <ul className="grid gap-y-2 my-3 list-disc mx-8 lg:mx-12">
-                    <li>
-                        Leverages the EDGAR Search and Access for publicly traded companies, showing who bought and sold
-                        stock.
-                    </li>
-                    <li>Provides a history of data for any recent or old trades which occurred.</li>
-                </ul>
-            </div>
-        )
-    },
-    {
-        name: "FindPi",
-        icon: <Pi size={ICON_SIZE} />,
-        link: "https://github.com/avvinlad/FindPi",
-        description: (
-            <div className="">
-                <p className="text-lg font-semibold">How is it we came up with the value of π ?</p>
-                <ul className="grid gap-y-2 my-3 list-disc mx-8 lg:mx-12">
-                    <li>
-                        There are several ways to solve for π, this creative method is by using a certain number of data
-                        points from (0, 1) and a circle.
-                    </li>
-                    <li>
-                        Then find the amount of data points within a quarter circle and the total amount of data points
-                        which gives an approximation.
-                    </li>
-                </ul>
-            </div>
-        )
-    }
-];
