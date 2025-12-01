@@ -7,7 +7,10 @@ export const metadata: Metadata = {
 export default function Document() {
     return (
         <Html lang="en">
-            <Head />
+            <Head>
+                <link rel="icon" href="/favicon-light.svg" media="(prefers-color-scheme: light)"></link>
+                <link rel="icon" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)"></link>
+            </Head>
             <body className="">
                 <Main />
                 <NextScript />
