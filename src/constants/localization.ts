@@ -1,31 +1,31 @@
 // SECTION TITLES ------------------------------------------------
-export const ABOUT_ME_TITLE = "about";
-export const EXPERIENCE_TITLE = "work";
-export const PROJECTS_TITLE = "projects";
+export const ABOUT_ME_TITLE = "About";
+export const EXPERIENCE_TITLE = "Work";
+export const PROJECTS_TITLE = "Projects";
 
 // SECTION SUBTITLES ------------------------------------------------
-export const ABOUT_ME_SUBTITLE = "a quick glimpse of me.";
-export const EXPERIENCE_SUBTITLE = "what I do best.";
-export const PROJECTS_SUBTITLE = "on my spare time.";
+export const ABOUT_ME_SUBTITLE = "A quick glimpse of me.";
+export const EXPERIENCE_SUBTITLE = "What I do best.";
+export const PROJECTS_SUBTITLE = "On my spare time.";
 
 // NAVIGATION ------------------------------------------------
-export const NAV_HOME = "home";
-export const NAV_ABOUT = "about";
-export const NAV_PROJECTS = "projects";
+export const NAV_HOME = "Home";
+export const NAV_ABOUT = "About";
+export const NAV_PROJECTS = "Projects";
 
 // HERO ------------------------------------------------
-export const HERO_GREETING = "hi! i'm avin.";
-export const HERO_TAGLINE = "i like to create things!";
+export const HERO_GREETING = "Hi! I'm Avin.";
+export const HERO_TAGLINE = "I like to create things!";
 export const HERO_DESCRIPTION =
-    "i'm a software engineer based in Toronto, aimed at positively impacting large scale products and services.";
-export const HERO_CONNECT_BUTTON = "let's connect!";
+    "I'm a software engineer based in Toronto, aimed at positively impacting large scale products and services that are used throughout the world.";
+export const HERO_CONNECT_BUTTON = "Let's connect!";
 
 // ABOUT ME ------------------------------------------------
 export const ABOUT_ME = {
     intro: "Currently a Software Developer at",
     currentCompany: "Brock Solutions",
     currentCompanyUrl: "https://www.brocksolutions.com/",
-    rest: ", working with large scale systems that spans both frontend and backend development. Experienced with software development from all aspects, whether it's an initial design or deploying to production, I'm always interested in the processes of how we improve the world with technologyand the different ways to do so. ",
+    rest: ", working with large scale systems that spans both frontend and backend development. Experienced with software development from all aspects, whether it's an initial design or deploying to production, I'm always interested in the processes of how we improve the world with technology and the different ways to do so. ",
     technologies: "Here are some technologies I've been using:",
     hobbies:
         "I'm always interested in learning new things and travelling to new places! No matter the place I love to explore. I enjoy playing video games, travelling, and sports! I'm an avid badminton player and lately I've been taking up golf."

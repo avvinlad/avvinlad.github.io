@@ -23,7 +23,7 @@ export default function HomePage() {
                 />
             </div>
             {/* TAGLINE */}
-            <div className="flex flex-col">
+            <div className="flex flex-col w-3/5">
                 <span className="leading-relaxed text-2xl lg:text-4xl">{HERO_TAGLINE}</span>
                 <br />
                 <span className="leading-relaxed px-8 text-lg lg:text-xl">{HERO_DESCRIPTION}</span>
