@@ -33,7 +33,13 @@ export default function Header() {
             {/* DESKTOP MENU */}
             <nav id="desktop" className="hidden lg:flex w-fit mx-auto border-4 rounded-full px-4 py-2 bg-background">
                 <div className="flex gap-4 text-center justify-center items-center">
-                    <Image src={require("/public/images/pfp.png")} alt="Avin Lad" width={36} className="rounded-full" />
+                    <Image
+                        src={require("/public/images/pfp.JPG")}
+                        alt="Avin Lad"
+                        height={36}
+                        width={36}
+                        className="rounded-full"
+                    />
                     <NavItems />
                 </div>
             </nav>
@@ -41,7 +47,13 @@ export default function Header() {
             {/* MOBILE MENU */}
             <nav id="mobile" className="flex flex-col w-full bg-background lg:hidden">
                 <div className="flex w-full justify-between items-center p-4 xl:hidden">
-                    <Image src={require("/public/images/pfp.png")} alt="Avin Lad" width={40} className="rounded-full" />
+                    <Image
+                        src={require("/public/images/pfp.JPG")}
+                        alt="Avin Lad"
+                        width={40}
+                        height={40}
+                        className="rounded-full"
+                    />
                     <Menu size={40} onClick={() => setMenuOpen(!menuOpen)} />
                 </div>
                 <div
